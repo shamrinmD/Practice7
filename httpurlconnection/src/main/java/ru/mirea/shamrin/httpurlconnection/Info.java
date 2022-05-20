@@ -5,15 +5,15 @@ public class Info {
     private String region;
     private String country;
 
-    public Info(String ip, String city, String country) {
+    public Info(String ip, String region, String country) {
         this.ip = ip;
-        this.region = city;
+        this.region = region;
         this.country = country;
     }
 
     public String getIp() { return ip; }
 
-    public String getCity() { return region; }
+    public String getRegion() { return region; }
 
     public String getCountry() { return country; }
 }

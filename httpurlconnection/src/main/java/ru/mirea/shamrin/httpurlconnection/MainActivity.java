@@ -24,7 +24,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
     private final String url = "http://whatismyip.akamai.com/";
     private TextView ipTextView;
-    private TextView cityTextView;
+    private TextView regionTextView;
     private TextView countryTextView;
     private Button btnGetIP;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ipTextView = findViewById(R.id.myIPView);
-        cityTextView = findViewById(R.id.regionView);
+        regionTextView = findViewById(R.id.regionView);
         countryTextView = findViewById(R.id.countryView);
         btnGetIP = findViewById(R.id.btnGetIP);
         btnGetIP.setOnClickListener(this::onClickGetIP);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Info info) {
             ipTextView.setText(info.getIp());
-            cityTextView.setText(info.getCity());
+            regionTextView.setText(info.getRegion());
             countryTextView.setText(info.getCountry());
             super.onPostExecute(info);
         }
